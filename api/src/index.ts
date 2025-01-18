@@ -1,3 +1,4 @@
+import "module-alias/register";
 import app from "./shared/server";
 import connectDB from "./infrastructure/database";
 import logger from "./shared/logger";
