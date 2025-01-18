@@ -9,7 +9,12 @@ const options: swaggerJSDoc.Options = {
       version: "1.0.0",
       description: "API para coleta de dados via plugin",
     },
-    servers: [{ url: "http://localhost:3000" }],
+    servers: [
+      {
+        url: process.env.SWAGGER_SERVER_URL,
+        description: "Servidor de desenvolvimento",
+      },
+    ],
     components: {
       securitySchemes: {
         bearerAuth: {
@@ -19,8 +24,9 @@ const options: swaggerJSDoc.Options = {
         },
       },
     },
+    security: [{ bearerAuth: [] }],
   },
-  apis: ["./src/adapters/routes/*.ts"],
+  apis: ["./src/adapters/routes/*.{ts,js}"],
 };
 
 const swaggerSpec = swaggerJSDoc(options);
