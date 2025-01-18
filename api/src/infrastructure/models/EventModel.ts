@@ -5,7 +5,7 @@ const EventSchema = new mongoose.Schema({
   device: { type: String, required: true },
   os: { type: String, required: true },
   themeSwitchCount: { type: Number, required: true },
-  timestamp: { type: Date, default: Date.now },
+  timestamp: { type: Date, default: Date.now }
 });
 
-export default mongoose.model("Event", EventSchema);
+export default mongoose.model("CollectedEvent", EventSchema, "collected_events");
