@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-import logger from "../../shared/logger";
+import logger from "@shared/logger";
 
 const AuthMiddleware = (req: Request, res: Response, next: NextFunction): void => {
   const token = req.header("Authorization")?.split(" ")[1];

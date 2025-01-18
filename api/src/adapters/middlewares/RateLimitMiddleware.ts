@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
-import redisClient from "../../infrastructure/redis/redis";
+import redisClient from "@infrastructure/redis/redis";
 
-const RATE_LIMIT = 5; // Máximo de 5 requisições
-const RATE_LIMIT_WINDOW = 10 * 60; // 10 minutos em segundos
+const RATE_LIMIT = 5;
+const RATE_LIMIT_WINDOW = 10 * 60;
 
 const RateLimitMiddleware = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {

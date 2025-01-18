@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import ListEventsUseCase from "../../core/usecases/ListEventsUseCase";
+import ListEventsUseCase from "@core/usecases/ListEventsUseCase";
 
 const ListController = {
   async list(req: Request, res: Response): Promise<void> {

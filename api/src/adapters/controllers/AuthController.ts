@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import AuthUseCase from "../../core/usecases/AuthUseCase";
+import AuthUseCase from "@core/usecases/AuthUseCase";
 
 const AuthController = {
   async authenticate(req: Request, res: Response): Promise<void> {

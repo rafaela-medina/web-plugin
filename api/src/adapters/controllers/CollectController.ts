@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import CollectEventUseCase from "../../core/usecases/CollectEventUseCase";
+import CollectEventUseCase from "@core/usecases/CollectEventUseCase";
 
 const CollectController = {
   async collect(req: Request, res: Response): Promise<void> {
