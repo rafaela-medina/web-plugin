@@ -3,6 +3,7 @@ import AuthController from "../controllers/AuthController";
 import CollectController from "../controllers/CollectController";
 import ListController from "../controllers/ListController";
 import AuthMiddleware from "../middlewares/AuthMiddleware";
+import RateLimitMiddleware from "@adapters/middlewares/RateLimitMiddleware";
 
 const router = Router();
 
@@ -57,7 +58,7 @@ router.post("/auth", (req, res) => AuthController.authenticate(req, res));
  *       401:
  *         description: Token inválido ou ausente
  */
-router.post("/collect", AuthMiddleware, CollectController.collect);
+router.post("/collect", AuthMiddleware, RateLimitMiddleware, CollectController.collect);
 
 /**
  * @swagger
