@@ -91,3 +91,11 @@
 [2025-01-18T17:05:24.452Z] [31MERROR[39M: Redis Error: Error: connect ECONNREFUSED 127.0.0.1:6379
 [2025-01-18T17:05:24.954Z] [31MERROR[39M: Redis Error: Error: connect ECONNREFUSED 127.0.0.1:6379
 [2025-01-18T17:05:25.470Z] [31MERROR[39M: Redis Error: Error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-01-18T17:56:54.469Z] [32MINFO[39M: ✅ Connected to Redis
+[2025-01-18T17:56:54.875Z] [32MINFO[39M: ✅ Connected to MongoDB Atlas
+[2025-01-18T17:56:54.881Z] [32MINFO[39M: 🚀 Server running on port 3000
+[2025-01-18T17:58:57.627Z] [32MINFO[39M: ✅ Connected to Redis
+[2025-01-18T17:58:58.015Z] [32MINFO[39M: ✅ Connected to MongoDB Atlas
+[2025-01-18T17:58:58.018Z] [32MINFO[39M: 🚀 Server running on port 3000
+[2025-01-18T18:00:18.780Z] [32MINFO[39M: ✅ Connected to MongoDB Atlas
+[2025-01-18T18:00:18.790Z] [32MINFO[39M: 🚀 Server running on port 3000
