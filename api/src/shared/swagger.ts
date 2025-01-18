@@ -1,24 +1,28 @@
-import swaggerJsdoc from "swagger-jsdoc";
+import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
-import { Express } from "express";
 
-const options: swaggerJsdoc.Options = {
+const options: swaggerJSDoc.Options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "API de Coleta de Dados",
+      title: "Web Plugin API",
       version: "1.0.0",
-      description: "Documentação da API para extração de dados via plugin.",
+      description: "API para coleta de dados via plugin",
     },
-    servers: [{ url: "http://localhost:3000/api/v1" }],
+    servers: [{ url: "http://localhost:3000" }],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+        },
+      },
+    },
   },
   apis: ["./src/adapters/routes/*.ts"],
 };
 
-const swaggerSpec = swaggerJsdoc(options);
+const swaggerSpec = swaggerJSDoc(options);
 
-const setupSwagger = (app: Express) => {
-  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-};
-
-export default setupSwagger;
+export { swaggerSpec, swaggerUi };

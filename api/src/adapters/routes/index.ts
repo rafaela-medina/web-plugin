@@ -31,12 +31,13 @@ router.post("/auth", (req, res) => AuthController.authenticate(req, res));
 
 /**
  * @swagger
- * /collect:
+ * /api/v1/collect:
  *   post:
- *     summary: Coleta dados do usuário e salva no MongoDB
- *     tags: [Coleta de Dados]
+ *     summary: Envia dados coletados pelo plugin
  *     security:
  *       - bearerAuth: []
+ *     tags:
+ *       - Coleta
  *     requestBody:
  *       required: true
  *       content:
@@ -49,14 +50,14 @@ router.post("/auth", (req, res) => AuthController.authenticate(req, res));
  *               os:
  *                 type: string
  *               themeSwitchCount:
- *                 type: number
+ *                 type: integer
  *     responses:
  *       201:
  *         description: Dados coletados com sucesso
- *       400:
- *         description: Erro na requisição
+ *       401:
+ *         description: Token inválido ou ausente
  */
-router.post("/collect", AuthMiddleware, (req, res) => CollectController.collect(req, res));
+router.post("/collect", AuthMiddleware, CollectController.collect);
 
 /**
  * @swagger

@@ -4,14 +4,14 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import dotenv from "dotenv";
 import router from "../adapters/routes";
-import setupSwagger from "./swagger";
+import { swaggerSpec, swaggerUi } from "./swagger";
 
 dotenv.config();
 
 const app = express();
 
 // Configurar Swagger
-setupSwagger(app);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Middlewares globais
 app.use(express.json());
