@@ -1,5 +1,5 @@
 import app from "./shared/server";
-import connectDB from "./infraestructure/database";
+import connectDB from "./infrastructure/database";
 
 const PORT = process.env.PORT || 3000;
 
