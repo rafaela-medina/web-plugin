@@ -6,13 +6,14 @@ const RATE_LIMIT_WINDOW = 10 * 60;
 
 const RateLimitMiddleware = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   try {
-    const domain = (req as any).user?.domain;
-    if (!domain) {
+    const token = req.header("Authorization")?.split(" ")[1];
+
+    if (!token) {
       res.status(401).json({ error: "Authentication required" });
       return;
     }
 
-    const redisKey = `rate-limit:${domain}`;
+    const redisKey = `rate-limit:${token}`;
     const requests = await redisClient.get(redisKey);
 
     if (requests && Number(requests) >= RATE_LIMIT) {
@@ -21,7 +22,7 @@ const RateLimitMiddleware = async (req: Request, res: Response, next: NextFuncti
     }
 
     await redisClient.setEx(redisKey, RATE_LIMIT_WINDOW, String(Number(requests || 0) + 1));
-    
+
     next();
   } catch (error) {
     res.status(500).json({ error: "Server error" });
@@ -29,3 +30,4 @@ const RateLimitMiddleware = async (req: Request, res: Response, next: NextFuncti
 };
 
 export default RateLimitMiddleware;
+

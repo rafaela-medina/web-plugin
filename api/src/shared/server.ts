@@ -17,7 +17,6 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use(express.json());
 app.use(cors());
 app.use(helmet());
-app.use(rateLimit({ windowMs: 10 * 60 * 1000, max: 100 })); // 100 reqs por 10 min
 
 // Rotas
 app.use("/api/v1", router);
