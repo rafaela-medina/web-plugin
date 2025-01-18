@@ -9,7 +9,7 @@ const router = Router();
 
 /**
  * @swagger
- * /auth:
+ * /api/v1/auth:
  *   post:
  *     summary: Gera um token JWT para um domínio autorizado
  *     tags: [Autenticação]
@@ -62,7 +62,7 @@ router.post("/collect", AuthMiddleware, RateLimitMiddleware, CollectController.c
 
 /**
  * @swagger
- * /list:
+ * /api/v1/list:
  *   get:
  *     summary: Lista os últimos 20 eventos coletados
  *     tags: [Listagem]

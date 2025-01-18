@@ -5,3 +5,6 @@
 [2025-01-18T20:50:21.170Z] [32MINFO[39M: ✅ Connected to Redis
 [2025-01-18T20:50:21.563Z] [32MINFO[39M: ✅ Connected to MongoDB Atlas
 [2025-01-18T20:50:21.566Z] [32MINFO[39M: 🚀 Server running on port 3000
+[2025-01-18T20:53:31.923Z] [32MINFO[39M: ✅ Connected to Redis
+[2025-01-18T20:53:32.320Z] [32MINFO[39M: ✅ Connected to MongoDB Atlas
+[2025-01-18T20:53:32.322Z] [32MINFO[39M: 🚀 Server running on port 3000
