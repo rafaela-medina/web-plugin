@@ -2,23 +2,29 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
-import dotenv from "dotenv";
-import router from "../adapters/routes";
-import { swaggerSpec, swaggerUi } from "./swagger";
 
-dotenv.config();
+import router from "@adapters/routes";
+import { swaggerSpec, swaggerUi } from "@shared/swagger";
+
+const corsOptions = {
+  origin: process.env.CORS_ORIGIN || "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
 
 const app = express();
 
-// Configurar Swagger
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-// Middlewares globais
 app.use(express.json());
-app.use(cors());
-app.use(helmet());
+app.use(cors(corsOptions));
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+    crossOriginResourcePolicy: { policy: "cross-origin" },
+  })
+);
 
-// Rotas
 app.use("/api/v1", router);
 
 export default app;
