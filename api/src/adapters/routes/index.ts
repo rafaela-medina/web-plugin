@@ -1,8 +1,8 @@
 import { Router } from "express";
-import AuthController from "../controllers/AuthController";
-import CollectController from "../controllers/CollectController";
-import ListController from "../controllers/ListController";
-import AuthMiddleware from "../middlewares/AuthMiddleware";
+import AuthController from "@adapters/controllers/AuthController";
+import CollectController from "@adapters/controllers/CollectController";
+import ListController from "@adapters/controllers/ListController";
+import AuthMiddleware from "@adapters/middlewares/AuthMiddleware";
 import RateLimitMiddleware from "@adapters/middlewares/RateLimitMiddleware";
 
 const router = Router();
@@ -28,7 +28,7 @@ const router = Router();
  *       400:
  *         description: Erro na requisição
  */
-router.post("/auth", (req, res) => AuthController.authenticate(req, res));
+router.post("/auth", AuthController.authenticate);
 
 /**
  * @swagger
@@ -69,7 +69,7 @@ router.post("/collect", AuthMiddleware, RateLimitMiddleware, CollectController.c
  *     parameters:
  *       - name: domain
  *         in: query
- *         required: true
+ *         required: false
  *         schema:
  *           type: string
  *     responses:
@@ -78,6 +78,6 @@ router.post("/collect", AuthMiddleware, RateLimitMiddleware, CollectController.c
  *       400:
  *         description: Erro na requisição
  */
-router.get("/list", (req, res) => ListController.list(req, res));
+router.get("/list", ListController.list);
 
 export default router;

@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import rateLimit from "express-rate-limit";
 
 import router from "@adapters/routes";
 import { swaggerSpec, swaggerUi } from "@shared/swagger";
