@@ -1,9 +1,9 @@
-import { detectDevice, detectOS, getOrigin, trackThemeChanges, getThemeSwitchCount } from "./core/dataExtractor";
 import { createButton } from "./adapters/buttonAdapter";
+import { trackThemeChanges } from "./core/dataExtractor";
 
 (function initializePlugin() {
   document.addEventListener("DOMContentLoaded", () => {
-    createButton();
     trackThemeChanges();
+    createButton();
   });
 })();
