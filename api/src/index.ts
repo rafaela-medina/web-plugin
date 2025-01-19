@@ -1,6 +1,6 @@
 import "module-alias/register";
 import app from "./shared/server";
-import connectDB, { closeDB } from "./infrastructure/database";
+import { connectDB, closeDB } from "./infrastructure/database";
 import { connectRedis, closeRedis } from "./infrastructure/redis/redis";
 import logger from "./shared/logger";
 
@@ -11,7 +11,7 @@ const startServer = async () => {
   await connectRedis();
 
   const server = app.listen(PORT, () => {
-    logger.info(`🚀 Server running on port ${PORT}`);
+    logger.info(`Server running on port ${PORT}`);
   });
 
   const shutdown = async (signal: string) => {

@@ -1,8 +1,8 @@
 import EventRepository from "../../infrastructure/repositories/EventRepository";
 
 class ListEventsUseCase {
-  async execute(domain: string) {
-    return await EventRepository.list(domain);
+  async execute(origin: string) {
+    return await EventRepository.list(origin);
   }
 }
 

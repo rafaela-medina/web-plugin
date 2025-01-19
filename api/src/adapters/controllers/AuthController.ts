@@ -4,14 +4,14 @@ import AuthUseCase from "@core/usecases/AuthUseCase";
 const AuthController = {
   async authenticate(req: Request, res: Response): Promise<void> {
     try {
-      const { domain } = req.body;
+      const { origin } = req.body;
 
-      if (!domain) {
-        res.status(400).json({ error: "Domain is required" });
+      if (!origin) {
+        res.status(400).json({ error: "Origin is required" });
         return;
       }
 
-      const token = await AuthUseCase.execute(domain);
+      const token = await AuthUseCase.execute(origin);
       res.status(200).json({ token });
     } catch (error) {
       res.status(500).json({ error: "Authentication failed" });

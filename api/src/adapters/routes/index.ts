@@ -20,7 +20,7 @@ const router = Router();
  *           schema:
  *             type: object
  *             properties:
- *               domain:
+ *               origin:
  *                 type: string
  *     responses:
  *       200:
@@ -67,7 +67,7 @@ router.post("/collect", AuthMiddleware, RateLimitMiddleware, CollectController.c
  *     summary: Lista os últimos 20 eventos coletados
  *     tags: [Listagem]
  *     parameters:
- *       - name: domain
+ *       - name: origin
  *         in: query
  *         required: false
  *         schema:

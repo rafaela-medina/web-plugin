@@ -5,10 +5,10 @@ const CollectController = {
   async collect(req: Request, res: Response): Promise<void> {
     try {
       const { device, os, themeSwitchCount } = req.body;
-      const domain = (req as any).user?.domain;
+      const origin = (req as any).user?.origin;
 
       const event = await CollectEventUseCase.execute({
-        domain,
+        origin,
         device,
         os,
         themeSwitchCount,

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const EventSchema = new mongoose.Schema({
-  domain: { type: String, required: true },
+  origin: { type: String, required: true },
   device: { type: String, required: true },
   os: { type: String, required: true },
   themeSwitchCount: { type: Number, required: true },

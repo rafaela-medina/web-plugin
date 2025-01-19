@@ -1,22 +1,26 @@
 import mongoose from "mongoose";
-import dotenv from "dotenv";
 import logger from "@shared/logger";
-
-dotenv.config();
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI as string);
-    logger.info("Connected to MongoDB Atlas");
+    const dbUri = process.env.MONGO_URI;
+    if (!dbUri) {
+      throw new Error("MONGO_URI is not defined in the environment variables");
+    }
+    await mongoose.connect(dbUri, {
+      dbName: process.env.MONGO_DB_NAME,
+    });
+
+    logger.info(`Connected to MongoDB`);
   } catch (error) {
     logger.error(`MongoDB Connection Error: ${error}`);
     process.exit(1);
   }
 };
 
-export const closeDB = async () => {
+const closeDB = async () => {
   await mongoose.connection.close();
   logger.info("MongoDB connection closed.");
 };
 
-export default connectDB;
+export { connectDB, closeDB };

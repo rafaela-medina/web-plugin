@@ -1,7 +1,7 @@
 import AuthModel from "../models/AuthModel";
 
 class AuthRepository {
-  async save(authData: { domain: string; token: string; expiresAt: Date }) {
+  async save(authData: { origin: string; token: string; expiresAt: Date }) {
     return await AuthModel.create(authData);
   }
 

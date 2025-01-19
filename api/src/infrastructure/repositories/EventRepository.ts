@@ -2,7 +2,7 @@ import EventModel from "../models/EventModel";
 
 class EventRepository {
   async save(eventData: {
-    domain: string;
+    origin: string;
     device: string;
     os: string;
     themeSwitchCount: number;
@@ -10,8 +10,8 @@ class EventRepository {
     return await EventModel.create(eventData);
   }
 
-  async list(domain: string) {
-    return await EventModel.find({ domain }).sort({ timestamp: -1 }).limit(20);
+  async list(origin: string) {
+    return await EventModel.find({ origin }).sort({ timestamp: -1 }).limit(20);
   }
 }
 

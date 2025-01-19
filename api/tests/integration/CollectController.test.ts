@@ -7,7 +7,7 @@ describe("CollectController", () => {
   beforeAll(async () => {
     const authRes = await request(app)
       .post("/api/v1/auth")
-      .send({ domain: "meusite.com" });
+      .send({ origin: "meusite.com" });
   
     token = authRes.body.token;
   });

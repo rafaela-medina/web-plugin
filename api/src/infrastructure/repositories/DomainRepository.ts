@@ -5,8 +5,8 @@ class DomainRepository {
     return await DomainModel.findOne({ name });
   }
 
-  async create(domain: { name: string; apiKey: string }) {
-    return await DomainModel.create(domain);
+  async create(origin: { name: string; apiKey: string }) {
+    return await DomainModel.create(origin);
   }
 }
 
