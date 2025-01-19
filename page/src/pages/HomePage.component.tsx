@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
         <ProfileSection>
           <Avatar src={PROFILE_DATA.avatarUrl} alt={`Foto de ${PROFILE_DATA.name}`} />
           <Title size="large" as="h1">{PROFILE_DATA.name}</Title>
-          <Button variant="primary" ariaLabel="Entre em contato">{PROFILE_DATA.contactText}</Button>
+            <Button variant="primary" ariaLabel="Entre em contato">{PROFILE_DATA.contactText}</Button>
         </ProfileSection>
 
         {/* Seção Sobre Mim */}

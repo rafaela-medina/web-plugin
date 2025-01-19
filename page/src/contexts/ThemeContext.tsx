@@ -24,7 +24,7 @@ interface ThemeContextProps {
   toggleTheme: () => void
 }
 
-const ThemeContext = createContext<ThemeContextProps | undefined>(undefined)
+export const ThemeContext = createContext<ThemeContextProps | undefined>(undefined) // ✅ Agora está exportando corretamente
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setTheme] = useState<DefaultTheme>(() => {

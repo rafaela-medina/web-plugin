@@ -1,5 +1,5 @@
 export const PROFILE_DATA = {
-  avatarUrl: 'https://www.handtalk.me/en/wp-content/themes/hand-talk/assets/imgs/hugo-e-maya/mobile/Maya_06.webp',
+  avatarUrl: 'https://img1.wsimg.com/isteam/ip/414fcd97-cd79-4b81-9ec9-047d5c214649/Portoer%20on%20Bridge.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25',
   name: 'Fulane',
   contactText: 'Entre em contato'
 }
@@ -36,7 +36,32 @@ export const PROJECTS = [
 export const BLOG_POSTS = [
   {
     id: 1,
-    title: 'Última postagem',
-    description: 'Uma breve descrição sobre a postagem'
+    date: 'DD/MM/yyyy',
+    title: 'Uma postagem interessante',
+    description: 'Descrição breve sobre essa postagem interessante.'
+  },
+  {
+    id: 2,
+    date: 'DD/MM/yyyy',
+    title: 'Outra postagem super interessante',
+    description: 'Descrição breve sobre essa outra postagem.'
+  },
+  {
+    id: 3,
+    date: 'DD/MM/yyyy',
+    title: 'Uma postagem interessante',
+    description: 'Descrição breve sobre essa postagem interessante.'
+  },
+  {
+    id: 4,
+    date: 'DD/MM/yyyy',
+    title: 'Outra postagem super interessante',
+    description: 'Descrição breve sobre essa outra postagem.'
+  },
+  {
+    id: 5,
+    date: 'DD/MM/yyyy',
+    title: 'Outra postagem super interessante',
+    description: 'Descrição breve sobre essa outra postagem.'
   }
 ]

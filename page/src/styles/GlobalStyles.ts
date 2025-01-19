@@ -1,12 +1,29 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
-  body {
-    background-color: ${({ theme }) => theme.background || '#ffffff'};
-    color: ${({ theme }) => theme.text || '#000000'};
-    font-family: 'Lato', sans-serif;
+  * {
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background-color: ${({ theme }) => theme.background};
+    color: ${({ theme }) => theme.text};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
   }
 `

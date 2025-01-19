@@ -5,6 +5,7 @@ module.exports = {
   output: {
     filename: "plugin.js",
     path: path.resolve(__dirname, "dist"),
+    publicPath: "dist/",
   },
   resolve: {
     extensions: [".ts", ".js"],
@@ -19,6 +20,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+      },
+      {
+        test: /\.svg$/i,
+        type: "asset/resource",
       },
     ],
   },

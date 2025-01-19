@@ -9,4 +9,9 @@ export const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  button {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
 `

@@ -1,17 +1,16 @@
 import React from 'react'
-import { Title } from '~/components/atoms/Title/Title.component'
-import { CardContainer, PostDescription } from './PostCard.styles'
+import { PostCardContainer } from './PostCard.styles'
 
 interface PostCardProps {
-  title: string
-  description: string
+  date: string;
+  title: string;
+  description: string;
 }
 
-export const PostCard: React.FC<PostCardProps> = ({ title, description }) => {
-  return (
-    <CardContainer>
-      <Title size="medium" as="h3">{title}</Title>
-      <PostDescription>{description}</PostDescription>
-    </CardContainer>
-  )
-}
+export const PostCard: React.FC<PostCardProps> = ({ date, title, description }) => (
+  <PostCardContainer>
+    <p className="post-date">{date}</p>
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </PostCardContainer>
+)
