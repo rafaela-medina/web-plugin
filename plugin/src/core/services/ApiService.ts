@@ -7,7 +7,18 @@ export class ApiService {
   async getToken(): Promise<string> {
     if (this.token) return this.token;
 
-    const response = await fetch(`${this.baseUrl}/auth`, { method: "POST" });
+    const response = await fetch(`${this.baseUrl}/auth`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ origin: window.location.origin }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Erro ao obter token de autenticação");
+    }
+
     const data = await response.json();
     this.token = data.token;
     return this.token!;
@@ -20,7 +31,7 @@ export class ApiService {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify(data),
     });
