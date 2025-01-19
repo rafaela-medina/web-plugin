@@ -10,15 +10,7 @@ interface MainTemplateProps {
 const MainTemplate: React.FC<MainTemplateProps> = ({ children }) => {
   return (
     <Layout>
-      <Header
-        userName="John Doe"
-        avatarUrl="https://via.placeholder.com/150"
-        links={[
-          { label: 'Sobre', href: '#about' },
-          { label: 'Projetos', href: '#projects' },
-          { label: 'Blog', href: '#blog' },
-        ]}
-      />
+      <Header />
       <Content>{children}</Content>
       <Footer />
     </Layout>

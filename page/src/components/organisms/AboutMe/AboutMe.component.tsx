@@ -1,7 +1,5 @@
 import React from 'react'
-import { Container, Description, ContactButtons } from './AboutMe.styles'
-import { ContactButton } from '~/components/molecules/ContactButton'
-import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa'
+import { Container, Description } from './AboutMe.styles'
 
 interface AboutMeProps {
   description: string
@@ -10,15 +8,10 @@ interface AboutMeProps {
   github: string
 }
 
-const AboutMe: React.FC<AboutMeProps> = ({ description, email, linkedin, github }) => {
+const AboutMe: React.FC<AboutMeProps> = ({ description}) => {
   return (
     <Container>
       <Description>{description}</Description>
-      <ContactButtons>
-        <ContactButton type="email" url={`mailto:${email}`} label="Email" icon={<FaEnvelope />} />
-        <ContactButton type="linkedin" url={linkedin} label="LinkedIn" icon={<FaLinkedin />} />
-        <ContactButton type="github" url={github} label="GitHub" icon={<FaGithub />} />
-      </ContactButtons>
     </Container>
   )
 }

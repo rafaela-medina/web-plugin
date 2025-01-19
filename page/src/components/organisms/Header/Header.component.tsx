@@ -1,31 +1,14 @@
 import React from 'react'
-import { useTheme } from '~/contexts/ThemeContext'
-import { HeaderContainer, Profile, Name, Nav, NavLink } from './Header.styles'
+import { HeaderContainer, Profile, UserName } from './Header.styles' // Importação corrigida
 import { Avatar } from '~/components/atoms/Avatar'
 import { ThemeSwitcher } from '~/components/molecules/ThemeSwitcher'
 
 interface HeaderProps {
-  userName: string
-  avatarUrl: string
-  links: { label: string; href: string }[]
 }
 
-const Header: React.FC<HeaderProps> = ({ userName, avatarUrl, links }) => {
-  const { theme } = useTheme()
-
+const Header: React.FC<HeaderProps> = () => {
   return (
     <HeaderContainer>
-      <Profile>
-        <Avatar src={avatarUrl} alt={userName} size="medium" />
-        <Name>{userName}</Name>
-      </Profile>
-      <Nav>
-        {links.map((link) => (
-          <NavLink key={link.href} href={link.href}>
-            {link.label}
-          </NavLink>
-        ))}
-      </Nav>
       <ThemeSwitcher />
     </HeaderContainer>
   )

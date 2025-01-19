@@ -1,57 +1,46 @@
 import React from 'react'
 import { MainTemplate } from '~/components/templates/MainTemplate'
-import { AboutMe } from '~/components/organisms/AboutMe'
-import { ProjectsSection } from '~/components/organisms/ProjectsSection'
-import { PostsSection } from '~/components/organisms/PostsSection'
-import { Section } from './HomePage.styles'
-
-const mockProjects = [
-  {
-    imageUrl: 'https://via.placeholder.com/350x180',
-    title: 'Projeto 1',
-    description: 'Descrição do projeto 1.',
-    projectUrl: 'https://example.com/1',
-  },
-  {
-    imageUrl: 'https://via.placeholder.com/350x180',
-    title: 'Projeto 2',
-    description: 'Descrição do projeto 2.',
-    projectUrl: 'https://example.com/2',
-  },
-]
-
-const mockPosts = [
-  {
-    title: 'Post 1',
-    description: 'Descrição do post 1.',
-    postUrl: 'https://example.com/1',
-  },
-  {
-    title: 'Post 2',
-    description: 'Descrição do post 2.',
-    postUrl: 'https://example.com/2',
-  },
-]
+import { PageContainer, ProfileSection, Avatar, UserName, ContactButton, Section, Card, ProjectImage, ProjectTitle, ProjectDescription, ProjectButton, FullWidthButton, FooterContainer } from './HomePage.styles'
 
 const HomePage: React.FC = () => {
   return (
     <MainTemplate>
-      <Section id="about">
-        <AboutMe
-          description="Sou um desenvolvedor apaixonado por tecnologia e inovação."
-          email="email@example.com"
-          linkedin="https://linkedin.com/in/example"
-          github="https://github.com/example"
-        />
-      </Section>
+      <PageContainer>
+        <ProfileSection>
+          <Avatar src="https://via.placeholder.com/150" alt="Perfil" />
+          <UserName>Fulane</UserName>
+          <ContactButton>Entre em contato</ContactButton>
+        </ProfileSection>
 
-      <Section id="projects">
-        <ProjectsSection title="Meus Projetos" projects={mockProjects} />
-      </Section>
+        <Section>
+          <h2>Sobre mim</h2>
+          <p>Qualquer conteúdo textual inventado da sua preferência</p>
+          <h3>Habilidades</h3>
+          <p><strong>Ferramentas</strong></p>
+          <p>Sketch</p>
+          <p><strong>Metodologias</strong></p>
+          <p>Duplo Diamante</p>
+          <p>Scrum</p>
+          <p><strong>Banco de dados</strong></p>
+          <p>Firebase</p>
+        </Section>
 
-      <Section id="blog">
-        <PostsSection title="Últimos Posts" posts={mockPosts} />
-      </Section>
+        <Section>
+          <h2>Projetos</h2>
+          <Card>
+            <ProjectImage />
+            <ProjectTitle>Nome do projeto</ProjectTitle>
+            <ProjectDescription>Descrição sobre o projeto</ProjectDescription>
+            <ProjectButton>Ver mais</ProjectButton>
+          </Card>
+          <FullWidthButton>Ver todos os projetos</FullWidthButton>
+        </Section>
+
+        <Section>
+          <h2>Últimas postagens</h2>
+          <FullWidthButton>Ver todas as postagens</FullWidthButton>
+        </Section>
+      </PageContainer>
     </MainTemplate>
   )
 }

@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react'
-import { Divider } from './Divider.component'
+import Divider from './Divider.component'
 
 test('deve renderizar um divider com a espessura padrão', () => {
-  render(<Divider />)
+  render(<Divider thickness={2} width="100%" color="black" />)
 
   const divider = screen.getByRole('separator')
 
@@ -11,7 +11,7 @@ test('deve renderizar um divider com a espessura padrão', () => {
 })
 
 test('deve renderizar um divider com espessura personalizada', () => {
-  render(<Divider thickness={5} />)
+  render(<Divider thickness={5} width="100%" color="black" />)
 
   const divider = screen.getByRole('separator')
 
@@ -19,7 +19,7 @@ test('deve renderizar um divider com espessura personalizada', () => {
 })
 
 test('deve renderizar um divider com largura personalizada', () => {
-  render(<Divider width="50%" />)
+  render(<Divider thickness={2} width="50%" color="black" />)
 
   const divider = screen.getByRole('separator')
 
@@ -27,7 +27,7 @@ test('deve renderizar um divider com largura personalizada', () => {
 })
 
 test('deve renderizar um divider com cor personalizada', () => {
-  render(<Divider color="red" />)
+  render(<Divider thickness={2} width="100%" color="red" />)
 
   const divider = screen.getByRole('separator')
 

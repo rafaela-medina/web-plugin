@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Button = styled.button`
-  background-color: ${({ theme }) => (theme === "dark" ? "#333" : "#fff")};
-  color: ${({ theme }) => (theme === "dark" ? "#fff" : "#333")};
-  border: 1px solid ${({ theme }) => (theme === "dark" ? "#fff" : "#333")};
+  background-color: ${({ theme }) => (theme.mode === 'dark' ? '#333' : '#fff')};
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#fff' : '#333')};
+  border: 1px solid ${({ theme }) => (theme.mode === 'dark' ? '#fff' : '#333')};
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
@@ -12,4 +12,4 @@ export const Button = styled.button`
   &:hover {
     opacity: 0.8;
   }
-`;
+`

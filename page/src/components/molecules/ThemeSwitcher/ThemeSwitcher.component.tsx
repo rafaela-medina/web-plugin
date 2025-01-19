@@ -1,15 +1,16 @@
 import React from 'react'
 import { useTheme } from '~/contexts/ThemeContext'
-import { Container, ThemeText } from './ThemeSwitcher.styles'
-import { ThemeToggle } from '~/components/atoms/ThemeToggle'
+import { Container, ToggleButton } from './ThemeSwitcher.styles'
+import { FaSun, FaMoon } from 'react-icons/fa'
 
 const ThemeSwitcher: React.FC = () => {
-  const { theme } = useTheme()
+  const { theme, toggleTheme } = useTheme()
 
   return (
     <Container>
-      <ThemeText>{theme === 'light' ? 'Modo Claro' : 'Modo Escuro'}</ThemeText>
-      <ThemeToggle />
+      <ToggleButton onClick={toggleTheme}>
+        {theme.mode === 'light' ? <FaSun /> : <FaMoon />}
+      </ToggleButton>
     </Container>
   )
 }

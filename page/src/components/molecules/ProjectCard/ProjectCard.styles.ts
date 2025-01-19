@@ -1,14 +1,11 @@
 import styled from 'styled-components'
 
 export const Card = styled.div`
-  display: flex;
-  flex-direction: column;
+  background-color: ${({ theme }) => theme.cardBg};
+  color: ${({ theme }) => theme.text};
+  padding: 20px;
   border-radius: 10px;
-  overflow: hidden;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  width: 100%;
-  max-width: 350px;
 `
 
 export const Image = styled.img`
