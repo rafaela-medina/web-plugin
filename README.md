@@ -51,6 +51,7 @@ npm run dev
 ```
 
 A API estará disponível em: `http://localhost:3000`
+
 Acesse a documentação no SWAGGER: `http://localhost:3000/docs`
 
 ### 🔹 Rodar Frontend (Page)
@@ -80,30 +81,30 @@ cd ../plugin && npm test
 
 ### 📌 Plugin de Extração de Dados
 
-- Ativado via **botão fixo na tela**
+- Ativado via botão fixo na tela
 - Captura:
   - Dispositivo (Android, iOS ou Desktop)
   - Sistema operacional
   - Origem (domínio da página)
   - Contagem de mudanças de tema
-- Feedback acessível com **toast**.
-- Implementação baseada em **TDD**.
+- Feedback acessível com toast.
+- Implementação baseada em TDD.
 
 ### 📌 Frontend
 
-- Segue **Atomic Design**.
-- Botão para alternar entre **Dark Mode e Light Mode**.
-- **Boas práticas de acessibilidade** (validação W3C).
-- **Responsivo e performático**.
-- **Storybook** documentando componentes.
+- Segue Atomic Design.
+- Botão para alternar entre Dark Mode e Light Mode.
+- Boas práticas de acessibilidade (validação W3C).
+- Responsivo e performático.
+- Storybook documentando componentes.
 
 ### 📌 Backend
 
-- **Rate Limiting com Redis**.
-- **Logging com Winston**.
-- **Testes de unidade e integração abrangentes**.
-- **Autenticação via Bearer Token**.
-- **Clean Architecture** e **TDD**.
+- Rate Limiting com Redis.
+- Logging com Winston.
+- Testes de unidade e integração abrangentes.
+- Autenticação via Bearer Token.
+- Clean Architecture e TDD.
 
 Desenvolvido por **@rafaela-medina** 
 
