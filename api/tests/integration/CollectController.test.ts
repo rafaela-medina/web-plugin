@@ -20,7 +20,7 @@ describe("CollectController", () => {
     });
 
     expect(res.status).toBe(401);
-    expect(res.body.error).toBe("Token is missing");
+    expect(res.body.error).toBe("Token is missing or malformed");
   });
 
   it("should collect event successfully", async () => {

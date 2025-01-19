@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
+import dotenv from "dotenv";
+dotenv.config();
 
 import router from "@adapters/routes";
 import { swaggerSpec, swaggerUi } from "@shared/swagger";

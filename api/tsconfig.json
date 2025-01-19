@@ -6,6 +6,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "baseUrl": "./",
+    "types": ["node", "jest"],
     "paths": {
       "@core/*": ["src/core/*"],
       "@adapters/*": ["src/adapters/*"],
@@ -14,6 +15,6 @@
       "@types/*": ["src/types/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "tests"],
   "exclude": ["node_modules", "dist"]
 }
