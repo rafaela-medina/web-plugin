@@ -1,7 +1,5 @@
 # 🚀 Projeto Handtalk Challenge
 
-## 📌 Descrição
-
 Este projeto é um desafio técnico para a **Handtalk**, desenvolvido com **Clean Architecture**, **TDD**. Ele consiste em uma **API**, um **frontend** e um **plugin de extração de dados**, garantindo boas práticas de acessibilidade, performance e organização.
 
 ## 🏗️ Arquitetura
