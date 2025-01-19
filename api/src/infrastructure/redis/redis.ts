@@ -4,16 +4,26 @@ import logger from "@shared/logger";
 const redisClient = createClient({
   socket: {
     host: process.env.REDIS_HOST,
-    port: Number(process.env.REDIS_PORT),
+    port: Number(process.env.REDIS_PORT) || 6379,
   },
 });
 
-redisClient.on("error", (err) => logger.error(`Redis Error: ${err.message}`));
-redisClient.connect().then(() => logger.info("Connected to Redis"));
+redisClient.on("error", (err) => logger.error(`Redis Error: ${err}`));
 
-export const closeRedis = async () => {
-  await redisClient.quit();
-  logger.info("Redis connection closed.");
+const connectRedis = async () => {
+  if (!redisClient.isOpen) {
+    await redisClient.connect();
+    logger.info("Connected to Redis");
+  } else {
+    logger.warn("Redis connection attempt ignored (already connected)");
+  }
 };
 
-export default redisClient;
+const closeRedis = async () => {
+  if (redisClient.isOpen) {
+    await redisClient.quit();
+    logger.info("Redis connection closed.");
+  }
+};
+
+export { redisClient, connectRedis, closeRedis };

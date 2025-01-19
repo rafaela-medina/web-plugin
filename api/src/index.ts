@@ -1,14 +1,14 @@
 import "module-alias/register";
 import app from "./shared/server";
 import connectDB, { closeDB } from "./infrastructure/database";
-import redisClient, { closeRedis } from "./infrastructure/redis/redis";
+import { connectRedis, closeRedis } from "./infrastructure/redis/redis";
 import logger from "./shared/logger";
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 const startServer = async () => {
   await connectDB();
-  await redisClient.connect();
+  await connectRedis();
 
   const server = app.listen(PORT, () => {
     logger.info(`🚀 Server running on port ${PORT}`);

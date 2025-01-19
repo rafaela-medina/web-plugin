@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import redisClient from "@infrastructure/redis/redis";
+import { redisClient } from "@infrastructure/redis/redis";
 
 const RATE_LIMIT = 5;
 const RATE_LIMIT_WINDOW = 10 * 60;
