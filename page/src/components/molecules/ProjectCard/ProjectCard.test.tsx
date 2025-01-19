@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { ProjectCard } from './ProjectCard.component'
+import ProjectCard from './ProjectCard.component'
 
 const mockProject = {
   imageUrl: 'https://via.placeholder.com/350x180',

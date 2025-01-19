@@ -1,6 +1,5 @@
 import React from 'react'
-import { HeaderContainer, Profile, UserName } from './Header.styles' // Importação corrigida
-import { Avatar } from '~/components/atoms/Avatar'
+import { HeaderContainer } from './Header.styles'
 import { ThemeSwitcher } from '~/components/molecules/ThemeSwitcher'
 
 interface HeaderProps {

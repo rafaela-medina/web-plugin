@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { SkillList } from './SkillList.component'
+import SkillList from './SkillList.component'
 import { FaReact, FaNodeJs } from 'react-icons/fa'
 
 const mockCategories = [

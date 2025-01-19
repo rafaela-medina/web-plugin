@@ -7,7 +7,7 @@ const HomePage: React.FC = () => {
     <MainTemplate>
       <PageContainer>
         <ProfileSection>
-          <Avatar src="https://via.placeholder.com/150" alt="Perfil" />
+          <Avatar src="https://www.handtalk.me/en/wp-content/themes/hand-talk/assets/imgs/hugo-e-maya/mobile/Maya_06.webp" alt="Perfil" />
           <UserName>Fulane</UserName>
           <ContactButton>Entre em contato</ContactButton>
         </ProfileSection>

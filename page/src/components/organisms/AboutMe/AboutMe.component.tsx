@@ -1,19 +1,28 @@
-import React from 'react'
-import { Container, Description } from './AboutMe.styles'
+import React from "react";
+import { ABOUT_ME } from "~/data/mockData";
+import {
+  AboutMeContainer,
+  Title,
+  Description,
+  SkillsTitle,
+  SkillCategory,
+  SkillItem,
+} from "./AboutMe.styles";
 
-interface AboutMeProps {
-  description: string
-  email: string
-  linkedin: string
-  github: string
-}
+export const AboutMe: React.FC = () => (
+  <AboutMeContainer>
+    <Title>Sobre mim</Title>
+    <Description>{ABOUT_ME.description}</Description>
 
-const AboutMe: React.FC<AboutMeProps> = ({ description}) => {
-  return (
-    <Container>
-      <Description>{description}</Description>
-    </Container>
-  )
-}
+    <SkillsTitle>Habilidades</SkillsTitle>
 
-export default AboutMe
+    {ABOUT_ME.skills.map((skill) => (
+      <div key={skill.category}>
+        <SkillCategory>{skill.category}</SkillCategory>
+        {skill.items.map((item) => (
+          <SkillItem key={item}>{item}</SkillItem>
+        ))}
+      </div>
+    ))}
+  </AboutMeContainer>
+);

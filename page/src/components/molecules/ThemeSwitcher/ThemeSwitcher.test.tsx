@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react'
-import { ThemeSwitcher } from './ThemeSwitcher.component'
+import ThemeSwitcher from './ThemeSwitcher.component'
 import { ThemeProvider } from '~/contexts/ThemeContext'
 
 test('deve exibir "Modo Claro" como tema inicial', () => {
