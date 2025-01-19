@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-export const ToggleButton = styled.button`
+export const StyledButton = styled.button`
   background: none;
   border: none;
   font-size: 24px;
   cursor: pointer;
-  padding: 5px;
+  transition: transform 0.2s;
 
   &:hover {
-    opacity: 0.8;
+    transform: scale(1.1);
   }
 `

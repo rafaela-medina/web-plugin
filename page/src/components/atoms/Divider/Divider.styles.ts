@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-export const StyledDivider = styled.hr<{ thickness: number; width: string; color: string }>`
+export const StyledDivider = styled.hr`
   border: none;
-  height: ${({ thickness }) => thickness}px;
-  width: ${({ width }) => width};
-  background-color: ${({ color }) => color};
-  margin: 16px 0;
+  height: 1px;
+  background-color: ${({ theme }) => theme.text};
+  margin: 20px 0;
+  width: 100%;
 `

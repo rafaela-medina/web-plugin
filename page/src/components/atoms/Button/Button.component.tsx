@@ -2,18 +2,17 @@ import React from 'react'
 import { StyledButton } from './Button.styles'
 
 interface ButtonProps {
-  variant: 'primary' | 'secondary'
-  disabled?: boolean
-  onClick?: () => void
   children: React.ReactNode
+  onClick?: () => void
+  variant?: 'primary' | 'secondary' | 'dark'
+  fullWidth?: boolean
+  ariaLabel: string
 }
 
-const Button: React.FC<ButtonProps> = ({ variant, disabled, onClick, children }) => {
+export const Button: React.FC<ButtonProps> = ({ children, onClick, variant = 'primary', fullWidth = false, ariaLabel }) => {
   return (
-    <StyledButton variant={variant} disabled={disabled} onClick={onClick}>
+    <StyledButton onClick={onClick} variant={variant} fullWidth={fullWidth} aria-label={ariaLabel}>
       {children}
     </StyledButton>
   )
 }
-
-export default Button

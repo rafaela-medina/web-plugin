@@ -1,20 +1,18 @@
 import React from 'react'
-import { Layout, Content } from './MainTemplate.styles'
-import { Header } from '~/components/organisms/Header'
-import { Footer } from '~/components/organisms/Footer'
+import { Container } from '~/components/atoms/Container/Container.component'
+import { Footer } from '~/components/organisms/Footer/Footer.component'
+import { Header } from '~/components/organisms/Header/Header.component'
 
 interface MainTemplateProps {
   children: React.ReactNode
 }
 
-const MainTemplate: React.FC<MainTemplateProps> = ({ children }) => {
+export const MainTemplate: React.FC<MainTemplateProps> = ({ children }) => {
   return (
-    <Layout>
+    <>
       <Header />
-      <Content>{children}</Content>
+      <Container>{children}</Container>
       <Footer />
-    </Layout>
+    </>
   )
 }
-
-export default MainTemplate

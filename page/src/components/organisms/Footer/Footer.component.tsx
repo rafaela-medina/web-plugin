@@ -1,13 +1,6 @@
 import React from 'react'
-import { FooterContainer, FooterText } from './Footer.styles'
-const Footer: React.FC = () => {
-  return (
-    <FooterContainer>
-      <FooterText>
-        Desenvolvido com ❤️ por Rafaela Medina
-      </FooterText>
-    </FooterContainer>
-  )
-}
+import { FooterContainer } from './Footer.styles'
 
-export default Footer
+export const Footer: React.FC = () => {
+  return <FooterContainer>Desafio para Hand Talk</FooterContainer>
+}

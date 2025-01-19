@@ -10,15 +10,6 @@ export const FooterContainer = styled.footer`
   color: ${({ theme }) => theme.background};
   font-size: 14px;
   text-align: center;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  @media (max-width: 768px) {
-    padding: 16px;
-  }
-`
-
-export const FooterText = styled.p`
-  margin: 0;
+  position: relative;
+  margin-top: auto;
 `

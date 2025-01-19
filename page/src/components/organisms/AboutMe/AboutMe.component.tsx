@@ -1,28 +1,13 @@
-import React from "react";
-import { ABOUT_ME } from "~/data/mockData";
-import {
-  AboutMeContainer,
-  Title,
-  Description,
-  SkillsTitle,
-  SkillCategory,
-  SkillItem,
-} from "./AboutMe.styles";
+import React from 'react'
+import { ABOUT_ME } from '~/data/mockData'
+import { Title } from '~/components/atoms/Title/Title.component'
+import { SkillList } from '~/components/molecules/SkillList/SkillList.component'
+import { SectionContainer } from './AboutMe.styles'
 
-export const AboutMe: React.FC = () => (
-  <AboutMeContainer>
-    <Title>Sobre mim</Title>
-    <Description>{ABOUT_ME.description}</Description>
-
-    <SkillsTitle>Habilidades</SkillsTitle>
-
-    {ABOUT_ME.skills.map((skill) => (
-      <div key={skill.category}>
-        <SkillCategory>{skill.category}</SkillCategory>
-        {skill.items.map((item) => (
-          <SkillItem key={item}>{item}</SkillItem>
-        ))}
-      </div>
-    ))}
-  </AboutMeContainer>
-);
+export const AboutMeSection: React.FC = () => (
+  <SectionContainer>
+    <Title size="large" as="h2" align="left">Sobre mim</Title>
+    <p>{ABOUT_ME.description}</p>
+    <SkillList />
+  </SectionContainer>
+)

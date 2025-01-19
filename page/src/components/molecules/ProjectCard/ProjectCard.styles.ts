@@ -1,51 +1,29 @@
 import styled from 'styled-components'
 
-export const Card = styled.div`
-  background-color: ${({ theme }) => theme.cardBg};
-  color: ${({ theme }) => theme.text};
+export const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: ${({ theme }) => theme.background};
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 20px;
 `
 
-export const Image = styled.img`
+export const ProjectImage = styled.img`
   width: 100%;
   height: 180px;
-  object-fit: cover;
-`
-
-export const Content = styled.div`
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-`
-
-export const Title = styled.h3`
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0;
-`
-
-export const Description = styled.p`
-  font-size: 14px;
-  color: #555;
-  margin: 0;
-`
-
-export const Button = styled.a`
-  display: inline-block;
-  padding: 10px 12px;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  background-color: #007bff;
-  color: white;
   border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s;
+  object-fit: cover;
+  margin-bottom: 10px;
+`
 
-  &:hover {
-    background-color: #0056b3;
-  }
+export const ProjectDescription = styled.p`
+  font-size: 14px;
+  color: ${({ theme }) => theme.text};
+  margin-bottom: 10px;
 `

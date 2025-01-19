@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Title, PostsGrid } from './PostsSection.styles'
-import { PostCard } from '~/components/molecules/PostCard'
+import { PostCard } from '~/components/molecules/PostCard/PostCard.component'
 
 interface Post {
   title: string

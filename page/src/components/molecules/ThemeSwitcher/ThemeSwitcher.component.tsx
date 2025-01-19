@@ -1,15 +1,13 @@
 import React from 'react'
 import { useTheme } from '~/contexts/ThemeContext'
-import { ToggleButton } from './ThemeSwitcher.styles'
+import { StyledButton } from './ThemeSwitcher.styles'
 
-const ThemeSwitcher: React.FC = () => {
+export const ThemeSwitcher: React.FC = () => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <ToggleButton onClick={toggleTheme}>
-      {theme.mode === 'light' ? '☀️' : '🌙'}
-    </ToggleButton>
+    <StyledButton onClick={toggleTheme} aria-label="Alternar tema">
+      {theme.name === 'light' ? '☀️' : '🌙'}
+    </StyledButton>
   )
 }
-
-export default ThemeSwitcher

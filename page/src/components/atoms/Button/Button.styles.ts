@@ -1,41 +1,21 @@
 import styled from 'styled-components'
 
-export const StyledButton = styled.button<{ variant: 'primary' | 'secondary'; disabled?: boolean }>`
+export const StyledButton = styled.button<{ variant: string; fullWidth: boolean }>`
+  background-color: ${({ variant, theme }) =>
+    variant === 'primary' ? theme.primary :
+    variant === 'secondary' ? theme.secondary :
+    theme.dark};
+  color: ${({ theme }) => theme.buttonText};
   padding: 10px 16px;
-  font-size: 16px;
-  font-weight: bold;
+  border: 2px solid ${({ theme }) => theme.buttonBorder};
   border-radius: 5px;
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
-  transition: all 0.3s ease-in-out;
-  border: none;
-  outline: none;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
 
-  ${({ variant }) =>
-    variant === 'primary' &&
-    `
-    background-color: #007bff;
-    color: #fff;
-
-    &:hover {
-      background-color: #0056b3;
-    }
-  `}
-
-  ${({ variant }) =>
-    variant === 'secondary' &&
-    `
-    background-color: #6c757d;
-    color: #fff;
-
-    &:hover {
-      background-color: #545b62;
-    }
-  `}
-
-  ${({ disabled }) =>
-    disabled &&
-    `
-    background-color: #ddd;
-    color: #999;
-  `}
+  &:hover {
+    opacity: 0.8;
+  }
 `

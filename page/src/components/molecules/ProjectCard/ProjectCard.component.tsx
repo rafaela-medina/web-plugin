@@ -1,26 +1,21 @@
 import React from 'react'
-import { Card, Image, Content, Title, Description, Button } from './ProjectCard.styles'
+import { Title } from '~/components/atoms/Title/Title.component'
+import { Button } from '~/components/atoms/Button/Button.component'
+import { CardContainer, ProjectImage, ProjectDescription } from './ProjectCard.styles'
 
 interface ProjectCardProps {
-  imageUrl: string
   title: string
   description: string
-  projectUrl: string
+  imageUrl: string
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ imageUrl, title, description, projectUrl }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl }) => {
   return (
-    <Card>
-      <Image src={imageUrl} alt={title} />
-      <Content>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-        <Button href={projectUrl} target="_blank" rel="noopener noreferrer">
-          Ver Projeto
-        </Button>
-      </Content>
-    </Card>
+    <CardContainer>
+      <ProjectImage src={imageUrl} alt={`Imagem do projeto ${title}`} loading="lazy" />
+      <Title size="medium" as="h3">{title}</Title>
+      <ProjectDescription>{description}</ProjectDescription>
+      <Button variant="dark" ariaLabel={`Ver mais sobre ${title}`}>Ver mais</Button>
+    </CardContainer>
   )
 }
-
-export default ProjectCard

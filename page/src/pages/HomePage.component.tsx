@@ -1,46 +1,34 @@
 import React from 'react'
-import { MainTemplate } from '~/components/templates/MainTemplate'
-import { PageContainer, ProfileSection, Avatar, UserName, ContactButton, Section, Card, ProjectImage, ProjectTitle, ProjectDescription, ProjectButton, FullWidthButton, FooterContainer } from './HomePage.styles'
+import { MainTemplate } from '~/components/templates/MainTemplate/MainTemplate.component'
+import { ProjectsSection } from '~/components/organisms/ProjectsSection/ProjectsSection.component'
+import { BlogSection } from '~/components/organisms/BlogSection/BlogSection.component'
+import { PROFILE_DATA } from '~/data/mockData'
+import { Container } from '~/components/atoms/Container/Container.component'
+import { Title } from '~/components/atoms/Title/Title.component'
+import { Button } from '~/components/atoms/Button/Button.component'
+import { ProfileSection, Avatar } from './HomePage.styles'
+import { AboutMeSection } from '~/components/organisms/AboutMe/AboutMe.component'
 
 const HomePage: React.FC = () => {
   return (
     <MainTemplate>
-      <PageContainer>
+      <Container>
+        {/* Seção Perfil */}
         <ProfileSection>
-          <Avatar src="https://www.handtalk.me/en/wp-content/themes/hand-talk/assets/imgs/hugo-e-maya/mobile/Maya_06.webp" alt="Perfil" />
-          <UserName>Fulane</UserName>
-          <ContactButton>Entre em contato</ContactButton>
+          <Avatar src={PROFILE_DATA.avatarUrl} alt={`Foto de ${PROFILE_DATA.name}`} />
+          <Title size="large" as="h1">{PROFILE_DATA.name}</Title>
+          <Button variant="primary" ariaLabel="Entre em contato">{PROFILE_DATA.contactText}</Button>
         </ProfileSection>
 
-        <Section>
-          <h2>Sobre mim</h2>
-          <p>Qualquer conteúdo textual inventado da sua preferência</p>
-          <h3>Habilidades</h3>
-          <p><strong>Ferramentas</strong></p>
-          <p>Sketch</p>
-          <p><strong>Metodologias</strong></p>
-          <p>Duplo Diamante</p>
-          <p>Scrum</p>
-          <p><strong>Banco de dados</strong></p>
-          <p>Firebase</p>
-        </Section>
+        {/* Seção Sobre Mim */}
+        <AboutMeSection />
 
-        <Section>
-          <h2>Projetos</h2>
-          <Card>
-            <ProjectImage />
-            <ProjectTitle>Nome do projeto</ProjectTitle>
-            <ProjectDescription>Descrição sobre o projeto</ProjectDescription>
-            <ProjectButton>Ver mais</ProjectButton>
-          </Card>
-          <FullWidthButton>Ver todos os projetos</FullWidthButton>
-        </Section>
+        {/* Seção Projetos */}
+        <ProjectsSection />
 
-        <Section>
-          <h2>Últimas postagens</h2>
-          <FullWidthButton>Ver todas as postagens</FullWidthButton>
-        </Section>
-      </PageContainer>
+        {/* Seção Últimas Postagens */}
+        <BlogSection />
+      </Container>
     </MainTemplate>
   )
 }

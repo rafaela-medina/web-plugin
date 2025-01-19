@@ -10,7 +10,7 @@ export const Container = styled.section`
 export const Title = styled.h2`
   font-size: 24px;
   font-weight: bold;
-  color: ${({ theme }) => (theme === 'dark' ? '#fff' : '#333')};
+  color: ${({ theme }) => (theme.mode === 'dark' ? '#fff' : '#333')};
   margin-bottom: 20px;
 `
 

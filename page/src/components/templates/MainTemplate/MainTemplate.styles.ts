@@ -1,16 +1,12 @@
 import styled from 'styled-components'
 
-export const Layout = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`
-
-export const Content = styled.main`
-  flex: 1;
-  padding: 20px;
+export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 20px;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `
