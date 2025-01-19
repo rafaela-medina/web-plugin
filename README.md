@@ -2,6 +2,11 @@
 
 Este projeto é um desafio técnico para a **Handtalk**, desenvolvido com **Clean Architecture**, **TDD**. Ele consiste em uma **API**, um **frontend** e um **plugin de extração de dados**, garantindo boas práticas de acessibilidade, performance e organização.
 
+![image](https://github.com/user-attachments/assets/7827ecb1-9ddd-4d91-9268-857d29ed5fed)
+![image](https://github.com/user-attachments/assets/4f5a5cc6-7cc9-4a43-bbda-85c8b754a7d7)
+
+
+
 ## 🏗️ Arquitetura
 
 A estrutura do projeto é dividida em três principais diretórios:
@@ -50,9 +55,13 @@ cd api
 npm run dev
 ```
 
-A API estará disponível em: `http://localhost:3000`
+Docker (para rodar o Redis)
+```bash
+  docker run --name redis-web-plugin -d -p 6379:6379 redis
+```
 
-Acesse a documentação no SWAGGER: `http://localhost:3000/docs`
+
+Acesse a documentação da API no SWAGGER: `http://localhost:3000/docs`
 
 ### 🔹 Rodar Frontend (Page)
 
